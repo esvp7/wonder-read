@@ -1,0 +1,31 @@
+.heading {
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+	color: steelblue;
+	font-size: 4.5rem;
+}
+
+.find {
+	color: lightskyblue;
+}
+
+@media screen and (max-width: 600px) {
+  .heading {
+  	margin-top: 2rem;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+  	margin-left: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .addForm {
+  	margin-left: 0.5rem;
+  }
+}
+
+

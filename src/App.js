@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { RestaurantsContextProvider } from "./context/RestaurantsContext";
+import Home from "./routes/Home";
+import RestaurantDetailPage from "./routes/RestaurantDetailPage";
+import UpdatePage from "./routes/UpdatePage";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <RestaurantsContextProvider>
+    <Router>
+      <div className="container appContainer">
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/restaurants/:id" element={<RestaurantDetailPage />}/>
+          <Route path="/restaurants/:id/update" element={<UpdatePage />}/>
+        </Routes>
+      </div>
+    </Router>
+  </RestaurantsContextProvider>
   );
 }
 
